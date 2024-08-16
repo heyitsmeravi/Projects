@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Calculator By RAVI</title>
+    <title>Attendance Calculator By RAVI </title>
     <style>
 .box{
     display:none;
@@ -18,14 +18,14 @@
 }
 #content_box{
     display: flexbox;
-    background-color: rgb(249, 248, 246);
+    background-color: rgb(255, 255, 255);
     margin:15% auto;
     padding: 10px;
     text-align: center;
     justify-content: center;
-    width:  250px;
-    height: 20px;
-    border-radius: 5px;
+    width: 450px;
+    height: 350px;
+    border-radius: 10px;
     border: 1px solid grey;
     justify-content: center;
 }
@@ -45,16 +45,20 @@
     background-color: black;
 }
 #modalImg{
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     font-style: bold;
     font-size: 10px;
-    padding: 40px;
+    padding: 20px;
 }
-p{
-    font-size: 18px;
-    font-style: normal;
+ #remarks , #percent{
+    font-size: 20px;
+     font-style: normal;
     margin: 5px;
+}
+#result { 
+    margin:10px;
+    font-size: 30px;
 }
 #calculationButton{
     background-color: rgb(247, 247, 188);
@@ -98,11 +102,11 @@ input{
 h1{
     color: white;
     font-size: 28px;
-    text-decoration: 1px rgb(235, 235, 174) underline;
+    text-decoration: 1px rgb(255, 255, 142) underline;
     margin-top:100px;
 }
 #close{
-    color: rgb(31, 30, 29);
+    color: rgb(13, 13, 13);
     padding:0.2em;
     width: 30px;
     height:25px;
@@ -126,9 +130,12 @@ h1{
     </div>
     <div id="mainbox" class="box">
         <div id="content_box">
+            <br>
             <img id="modalImg" src="" alt="Image">
+            <p id="result"></p>
             <p id="percent"></p> 
             <p id="remarks"></p>
+            <br>
             <button id="close" onclick="closure()"> OK</button>
         </div>
     </div>
@@ -150,14 +157,15 @@ h1{
                 let alertMsg=document.getElementById("percent");
                 if(isNaN(current) || isNaN(total )){
                     alertMsg.innerHTML="please enter some values!!";
-                    modalImg.src='https://media.giphy.com/media/3og0IvGtnDyPHCRaYU/giphy.gif';
+                    modalImg.src='https://assets-v2.lottiefiles.com/a/b5641ed8-1152-11ee-ada0-8f4e8e17569e/RpGVFAqeZF.gif';
                 }
                 else{
                     alertMsg.innerHTML="please enter some valid inputs !!";
-                    modalImg.src='https://media.giphy.com/media/3og0IvGtnDyPHCRaYU/giphy.gif';
+                    modalImg.src='https://assets-v2.lottiefiles.com/a/b5641ed8-1152-11ee-ada0-8f4e8e17569e/RpGVFAqeZF.gif';
                 }
                 alertMsg.style.color="red";
-                remarks.innerHTML='';
+                result.innerHTML='Error!';
+                result.style.color='black';
                 
             }
             else {
@@ -190,12 +198,13 @@ h1{
                 else{
                     modalImg.src='https://media.giphy.com/media/3og0IvGtnDyPHCRaYU/giphy.gif';
                 }
+                result.innerHTML="Attendance Result";
+                result.sytle.color='black';
             }
         }
         function closure(){
-        var mod = 
-                document.getElementById('mainbox');
-                mod.style.display = 'none';
+        var mod =document.getElementById('mainbox');
+            mod.style.display = 'none';
         }
 </script>
 </body>
